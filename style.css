@@ -4,9 +4,9 @@
     --cor-de-fundo: #000000;
     --verde: #a409d3;
     --branco: #FFFFFF;
-    --botao-ativo: #34004d;
-    --botao-inativo: rgba(108, 24, 156, 0.5);
-    --texto-fundo: rgb(90, 168, 179);
+    --botao-ativo: #590281;
+    --botao-inativo: rgba(127, 65, 163, 0.5);
+    --texto-fundo: rgb(79, 33, 85);
 }
 
 body {
@@ -60,10 +60,39 @@ body {
     display: block;
 }
 
-.ativo{
+.botao.ativo{
     background-color: var(--botao-ativo);
     border-bottom: 4px solid var(--verde);
 }
+
+.abas-textos{
+    background-color: var(--texto-fundo);
+    padding: 40px;
+    border-radius: 0 0 40px 40px;
+    border-bottom: 40px;
+}
+
+.aba-conteudo.ativo{
+    display: block;
+}
+
+.aba-conteudo{
+    display: none;
+}
+
+.aba-conteudo-titulo-principal{
+    font-size: 28px;
+    text-align: center;
+}
+
+.aba-conteudo-titulo-secundario{
+    text-align: center;
+    color: var(--verde);
+    text-transform: u;
+}
+
+
+
 
 @media screen and (min-width: 768px){
     .botoes{
@@ -77,4 +106,7 @@ body {
     .botao:last-child{
         border-radius: 0 40px 0 0;
     }
+
+
+
 }
