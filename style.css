@@ -2,7 +2,7 @@
 
 :root {
     --cor-de-fundo: #000000;
-    --verde: #a409d3;
+    --verde: #96d309;
     --branco: #FFFFFF;
     --botao-ativo: #590281;
     --botao-inativo: rgba(127, 65, 163, 0.5);
@@ -89,6 +89,11 @@ body {
     text-align: center;
     color: var(--verde);
     text-transform: u;
+}
+
+.contador{
+    font-size: 20px;
+    text-align: center;
 }
 
 
