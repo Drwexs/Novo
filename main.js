@@ -28,11 +28,11 @@ const tempoObjetivo3 = new Date("2026-11-05T14:00:00");
 const tempoObjetivo4 = new Date("2026-11-05T14:00:00");
 
 
-//Armezena as datas em array para facilitar o acesso 
+//Armazena as datas em array para facilitar o acesso
 const tempos = [tempoObjetivo1, tempoObjetivo2, tempoObjetivo3, tempoObjetivo4];
 
 
-//Função que calcula o tempo restante até a data do objetivo 
+//Função que calcula o tempo restante até a data do objetivo
 function calculaTempo(tempoObjetivo){
     let tempoAtual = new Date();//Pega o tempo atual
     let tempoFinal = tempoObjetivo - tempoAtual;//Calcula a diferença em milissegundos
@@ -52,20 +52,36 @@ function calculaTempo(tempoObjetivo){
 
 
     //Se o tempo ainda não chegou, exibe a contagem regressiva formatada
-
-
     if (tempoFinal > 0){
-        return dias + " dias " + horas + " horas " + minutos + " minutos " + segundos + " segundos ";
+        return [dias,horas,minutos,segundos];
     } else{
-        return "Prazo Finalizado";
+        return [0, 0, 0, 0];
     }
 }
 
 
 //Função que atualiza todos os contadores na tela
 function atualizaCronometro(){
+
+    document.getElementById("dias0").textContent = calculaTempo(tempos[0]) [0];
+    document.getElementById("horas0").textContent = calculaTempo(tempos[0]) [1];
+    document.getElementById("min0").textContent = calculaTempo(tempos[0]) [2];
+    document.getElementById("seg0").textContent = calculaTempo(tempos[0]) [3];
+
+
     for (let i = 0; i < contadores.length; i++){
-        contadores[i].textContent = calculaTempo(tempos[i]);
+        const tempoRestante = calculaTempo(tempos[i]);
+        const diasElement = document.getElementById(`dias${i + 1}`);
+        const horasElement = document.getElementById(`horas${i + 1}`);
+        const minutosElement = document.getElementById(`min${i + 1}`);
+        const segundosElement = document.getElementById(`seg${i + 1}`);
+
+        if (diasElement && horasElement && minutosElement && segundosElement) {
+            diasElement.textContent = tempoRestante[0];
+            horasElement.textContent = tempoRestante[1];
+            minutosElement.textContent = tempoRestante[2];
+            segundosElement.textContent = tempoRestante[3];
+        }
     }
 }
 
@@ -78,7 +94,3 @@ function comecaCronometro(){
 
 
 comecaCronometro();
-
-
-
-
