@@ -69,12 +69,7 @@ function atualizaCronometro(){
     document.getElementById("seg0").textContent = calculaTempo(tempos[0]) [3];
 
 
-    for (let i = 0; i < contadores.length; i++){
-        const tempoRestante = calculaTempo(tempos[i]);
-        const diasElement = document.getElementById(`dias${i + 1}`);
-        const horasElement = document.getElementById(`horas${i + 1}`);
-        const minutosElement = document.getElementById(`min${i + 1}`);
-        const segundosElement = document.getElementById(`seg${i + 1}`);
+    for (let i = 0; i < contadores.length; i++){;
 
         if (diasElement && horasElement && minutosElement && segundosElement) {
             diasElement.textContent = tempoRestante[0];
